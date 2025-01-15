@@ -1,15 +1,38 @@
 import React from 'react';
-import { IonButton, IonHeader, IonContent, IonNavLink, IonToolbar, IonTitle, IonImg } from '@ionic/react';
-
+import { IonButton, IonHeader, IonContent, IonButtons, IonMenu, IonMenuButton, IonIcon, IonPage, IonNavLink, IonToolbar, IonTitle, IonImg } from '@ionic/react';
+import { settings } from 'ionicons/icons';
 import Sesion from './page-two';
 import Registro from './page-four';
+import Admin from './page-admin';
 
 function Inicio() {
   return (
     <>
+    <IonMenu side="end" contentId="main-content">
+          <IonHeader>
+            <IonToolbar>
+            <IonTitle>MENU</IonTitle>
+            </IonToolbar>
+          </IonHeader>
+          <IonContent>
+          <IonNavLink routerDirection="forward" component={() => <Admin/>}>
+          <IonButton style={{ padding: '20px', fontSize: '18px', fontWeight: 'bold', marginTop: '20px' }} expand="block">
+            Admin
+          </IonButton>
+        </IonNavLink>
+          </IonContent>
+          </IonMenu>
+        <IonPage id="main-content">
       <IonHeader>
         <IonToolbar>
           <IonTitle>ConnectMe</IonTitle>
+              <IonButtons slot="end">
+                <IonMenuButton> 
+                  <IonButton>
+                    <IonIcon slot="icon-only" icon={settings}></IonIcon>
+                  </IonButton>
+                </IonMenuButton>
+              </IonButtons>
         </IonToolbar>
       </IonHeader>
       <IonContent color="medium" className="ion-padding ion-text-center">
@@ -22,6 +45,7 @@ function Inicio() {
           <IonButton size="large" expand="block" className="ion-margin-top">Registrarse</IonButton>
         </IonNavLink>
       </IonContent>
+         </IonPage>
     </>
   );
 }

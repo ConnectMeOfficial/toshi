@@ -1,9 +1,12 @@
-import React from 'react';
-import { IonButton, IonInput, IonItem, IonList, IonHeader, IonContent, IonButtons, IonBackButton, IonNavLink, IonToolbar, IonTitle, IonLabel, IonSelect, IonSelectOption } from '@ionic/react';
-
+import React, { useState } from 'react';
+import { IonHeader, IonToolbar, IonButtons, IonBackButton, IonTitle, IonContent, IonList, IonItem, IonLabel, IonInput, IonSelect, IonSelectOption, IonButton, IonNavLink } from '@ionic/react';
+import ConnectMe2 from './page-padre';
 import ConnectMe from './page-three';
 
-function Registro() {
+const Registro: React.FC = () => {
+  const [selectedOption, setSelectedOption] = useState<string | undefined>('');
+  const [selectedEdad, setSelecteEdad] = useState<string | undefined>('');
+
   return (
     <>
       <IonHeader>
@@ -33,7 +36,6 @@ function Registro() {
             <IonSelect placeholder="Selecciona tu género" style={{ fontSize: '1.5em' }}>
               <IonSelectOption value="male">Masculino</IonSelectOption>
               <IonSelectOption value="female">Femenino</IonSelectOption>
-              <IonSelectOption value="other">Otro</IonSelectOption>
             </IonSelect>
           </IonItem>
 
@@ -52,14 +54,62 @@ function Registro() {
             <IonInput type="tel" placeholder="888-888-8888" style={{ fontSize: '1.5em' }}></IonInput>
           </IonItem>
         </IonList>
-        <IonNavLink routerDirection="forward" component={() => <ConnectMe />}>
-          <IonButton style={{ padding: '20px', fontSize: '1.5em', fontWeight: 'bold', marginTop: '20px', float: 'right' }}>
-            Crear cuenta
-          </IonButton>
-        </IonNavLink>
+
+        <IonItem lines="full" style={{ marginBottom: '15px' }}>
+          <IonLabel position="stacked" style={{ fontSize: '2em' }}>¿Qué eres?</IonLabel>
+          <IonSelect placeholder="Selecciona tu rol" onIonChange={(e) => setSelectedOption(e.detail.value)} style={{ fontSize: '1.5em' }}>
+            <IonSelectOption value="Padre">Padre</IonSelectOption>
+            <IonSelectOption value="Hijo">Hijo</IonSelectOption>
+          </IonSelect>
+        </IonItem>
+
+        {selectedOption === "Padre" && (
+          <>
+            <IonItem lines="full" style={{ marginBottom: '15px' }}>
+              <IonLabel position="stacked" style={{ fontSize: '2em' }}>Edad</IonLabel>
+              <IonSelect placeholder="Selecciona tu género" onIonChange={(e) => setSelecteEdad(e.detail.value)} style={{ fontSize: '1.5em' }}>
+                <IonSelectOption value="opcion1">20-35</IonSelectOption>
+                <IonSelectOption value="opcion2">35-40</IonSelectOption>
+                <IonSelectOption value="opcion3">40-50</IonSelectOption>
+                <IonSelectOption value="opcion4">50-60+</IonSelectOption>
+
+              </IonSelect>
+            </IonItem>
+            
+            {selectedEdad && (
+              <IonNavLink routerDirection="forward" component={() => <ConnectMe2 />}>
+                <IonButton style={{ padding: '20px', fontSize: '1.5em', fontWeight: 'bold', marginTop: '20px', float: 'right' }}>
+                  Crear cuenta
+                </IonButton>
+              </IonNavLink>
+            )}
+          </>
+        )}
+
+        {selectedOption === "Hijo" && (
+          <>
+          <IonItem lines="full" style={{ marginBottom: '15px' }}>
+            <IonLabel position="stacked" style={{ fontSize: '2em' }}>Edad</IonLabel>
+            <IonSelect placeholder="Selecciona tu género" onIonChange={(e) => setSelecteEdad(e.detail.value)} style={{ fontSize: '1.5em' }}>
+              <IonSelectOption value="opcion5">10-14</IonSelectOption>
+              <IonSelectOption value="opcion6">14-16</IonSelectOption>
+              <IonSelectOption value="opcion7">16-18</IonSelectOption>
+              <IonSelectOption value="opcion8">+18</IonSelectOption>
+            </IonSelect>
+          </IonItem>
+          {selectedEdad && (
+          <IonNavLink routerDirection="forward" component={() => <ConnectMe />}>
+            <IonButton style={{ padding: '20px', fontSize: '1.5em', fontWeight: 'bold', marginTop: '20px', float: 'right' }}>
+              Crear cuenta
+            </IonButton>
+          </IonNavLink>
+          )}
+          </>
+        )}
+        
       </IonContent>
     </>
   );
-}
+};
 
 export default Registro;

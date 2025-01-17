@@ -1,7 +1,7 @@
 import React from 'react';
 import { IonBackButton, IonButtons, IonHeader, IonContent, IonToolbar, IonTitle } from '@ionic/react';
 
-function Hperfil() {
+function IA() {
   return (
     <>
       <IonHeader>
@@ -9,14 +9,14 @@ function Hperfil() {
           <IonButtons slot="start">
             <IonBackButton></IonBackButton>
           </IonButtons>
-          <IonTitle>Perfil</IonTitle>
+          <IonTitle>IA</IonTitle>
         </IonToolbar>
       </IonHeader>
-      <IonContent class="ion-padding">
-        <h1>Perfil</h1>
+      <IonContent color="light" className="ion-padding ion-text-center">
+        <h1>IA</h1>
       </IonContent>
     </>
   );
 }
 
-export default Hperfil;
+export default IA;

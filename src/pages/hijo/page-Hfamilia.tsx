@@ -12,7 +12,7 @@ function Hfamilia() {
           <IonTitle>Familia</IonTitle>
         </IonToolbar>
       </IonHeader>
-      <IonContent class="ion-padding">
+      <IonContent color="light" className="ion-padding ion-text-center">
         <h1>Familia</h1>
       </IonContent>
     </>

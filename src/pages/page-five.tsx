@@ -14,7 +14,7 @@ function Olvide() {
           <IonTitle style={{ fontSize: '2em' }}>ConnectMe</IonTitle>
         </IonToolbar>
       </IonHeader>
-      <IonContent color="medium" style={{ padding: '20px', textAlign: 'center' }}>
+      <IonContent color="light" className="ion-padding ion-text-center">
         <h1 style={{ fontSize: '2em', marginBottom: '20px' }}>Nueva contraseña</h1>
 
         <IonList style={{ maxWidth: '500px', margin: '0 auto' }}>

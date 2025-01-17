@@ -1,7 +1,7 @@
 import React from 'react';
 import { IonBackButton, IonButtons, IonHeader, IonContent, IonToolbar, IonTitle } from '@ionic/react';
 
-function Ajuste() {
+function Pemociones() {
   return (
     <>
       <IonHeader>
@@ -9,14 +9,14 @@ function Ajuste() {
           <IonButtons slot="start">
             <IonBackButton></IonBackButton>
           </IonButtons>
-          <IonTitle>Ajustes</IonTitle>
+          <IonTitle>Emociones</IonTitle>
         </IonToolbar>
       </IonHeader>
-      <IonContent class="ion-padding">
-        <h1>Ajustes</h1>
+      <IonContent color="light" className="ion-padding ion-text-center">
+        <h1>Emociones padre</h1>
       </IonContent>
     </>
   );
 }
 
-export default Ajuste;
+export default Pemociones;

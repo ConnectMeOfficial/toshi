@@ -10,7 +10,7 @@ function AdminMenu() {
             <IonTitle>MENU</IonTitle>
             </IonToolbar>
           </IonHeader>
-          <IonContent>
+          <IonContent color="light" className="ion-padding ion-text-center">
           </IonContent>
           </IonMenu>
       <IonHeader>
@@ -18,7 +18,7 @@ function AdminMenu() {
           <IonTitle>ConnectMe</IonTitle>
         </IonToolbar>
       </IonHeader>
-      <IonContent color="black" className="ion-padding">
+      <IonContent color="light" className="ion-padding ion-text-center">
         <h1>ConnectMe</h1>
       </IonContent>
     </>

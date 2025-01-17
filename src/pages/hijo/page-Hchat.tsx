@@ -12,7 +12,7 @@ function Hchat() {
           <IonTitle>Chat</IonTitle>
         </IonToolbar>
       </IonHeader>
-      <IonContent class="ion-padding">
+      <IonContent color="light" className="ion-padding ion-text-center">
         <h1>Chat</h1>
       </IonContent>
     </>

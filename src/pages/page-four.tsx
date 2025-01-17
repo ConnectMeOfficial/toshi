@@ -17,21 +17,26 @@ const Registro: React.FC = () => {
           <IonTitle style={{ fontSize: '2em' }}>ConnectMe</IonTitle>
         </IonToolbar>
       </IonHeader>
-      <IonContent color="medium" style={{ padding: '20px' }}>
+      <IonContent color="light" className="ion-padding ion-text-center">
         <h1 style={{ fontSize: '2em', marginBottom: '20px', textAlign: 'center' }}>Registro</h1>
 
-        <IonList style={{ maxWidth: '500px', margin: '0 auto' }}>
-          <IonItem lines="full" style={{ marginBottom: '15px' }}>
+        <IonList style={{ maxWidth: '500px', margin: '-10px' }}>
+          <IonItem lines="full" style={{ marginBottom: '-8px' }}>
             <IonLabel position="stacked" style={{ fontSize: '2em' }}>Nombres</IonLabel>
             <IonInput placeholder="Enter text" style={{ fontSize: '1.5em' }}></IonInput>
           </IonItem>
 
-          <IonItem lines="full" style={{ marginBottom: '15px' }}>
-            <IonLabel position="stacked" style={{ fontSize: '2em' }}>Apellidos</IonLabel>
+          <IonItem lines="full" style={{ marginBottom: '-8px' }}>
+            <IonLabel position="stacked" style={{ fontSize: '2em' }}>Apellido Paterno</IonLabel>
             <IonInput placeholder="Enter text" style={{ fontSize: '1.5em' }}></IonInput>
           </IonItem>
 
-          <IonItem lines="full" style={{ marginBottom: '15px' }}>
+          <IonItem lines="full" style={{ marginBottom: '-8px' }}>
+            <IonLabel position="stacked" style={{ fontSize: '2em' }}>Apellido Materno</IonLabel>
+            <IonInput placeholder="Enter text" style={{ fontSize: '1.5em' }}></IonInput>
+          </IonItem>
+
+          <IonItem lines="full" style={{ marginBottom: '-8px' }}>
             <IonLabel position="stacked" style={{ fontSize: '2em' }}>Género</IonLabel>
             <IonSelect placeholder="Selecciona tu género" style={{ fontSize: '1.5em' }}>
               <IonSelectOption value="male">Masculino</IonSelectOption>
@@ -39,23 +44,23 @@ const Registro: React.FC = () => {
             </IonSelect>
           </IonItem>
 
-          <IonItem lines="full" style={{ marginBottom: '15px' }}>
+          <IonItem lines="full" style={{ marginBottom: '-8px' }}>
             <IonLabel position="stacked" style={{ fontSize: '2em' }}>Correo electrónico</IonLabel>
             <IonInput type="email" placeholder="email@domain.com" style={{ fontSize: '1.5em' }}></IonInput>
           </IonItem>
 
-          <IonItem lines="full" style={{ marginBottom: '15px' }}>
+          <IonItem lines="full" style={{ marginBottom: '-10px' }}>
             <IonLabel position="stacked" style={{ fontSize: '2em' }}>Contraseña</IonLabel>
             <IonInput type="password" placeholder="password" style={{ fontSize: '1.5em' }}></IonInput>
           </IonItem>
 
-          <IonItem lines="full" style={{ marginBottom: '15px' }}>
+          <IonItem lines="full" style={{ marginBottom: '-8px' }}>
             <IonLabel position="stacked" style={{ fontSize: '2em' }}>Número de teléfono</IonLabel>
             <IonInput type="tel" placeholder="888-888-8888" style={{ fontSize: '1.5em' }}></IonInput>
           </IonItem>
         </IonList>
 
-        <IonItem lines="full" style={{ marginBottom: '15px' }}>
+          <IonItem lines="full" style={{ maxWidth: '500px', margin: '-10px' }}>
           <IonLabel position="stacked" style={{ fontSize: '2em' }}>¿Qué eres?</IonLabel>
           <IonSelect placeholder="Selecciona tu rol" onIonChange={(e) => setSelectedOption(e.detail.value)} style={{ fontSize: '1.5em' }}>
             <IonSelectOption value="Padre">Padre</IonSelectOption>
@@ -65,7 +70,7 @@ const Registro: React.FC = () => {
 
         {selectedOption === "Padre" && (
           <>
-            <IonItem lines="full" style={{ marginBottom: '15px' }}>
+              <IonItem lines="full" style={{ maxWidth: '500px', margin: '-10px' }}>
               <IonLabel position="stacked" style={{ fontSize: '2em' }}>Edad</IonLabel>
               <IonSelect placeholder="Selecciona tu género" onIonChange={(e) => setSelecteEdad(e.detail.value)} style={{ fontSize: '1.5em' }}>
                 <IonSelectOption value="opcion1">20-35</IonSelectOption>
@@ -78,7 +83,7 @@ const Registro: React.FC = () => {
             
             {selectedEdad && (
               <IonNavLink routerDirection="forward" component={() => <ConnectMe2 />}>
-                <IonButton style={{ padding: '20px', fontSize: '1.5em', fontWeight: 'bold', marginTop: '20px', float: 'right' }}>
+                <IonButton style={{ width: '150px', height: '80px', fontSize: '25px', fontWeight: 'bold', marginTop: '40px', float: 'right' }}>
                   Crear cuenta
                 </IonButton>
               </IonNavLink>
@@ -88,7 +93,7 @@ const Registro: React.FC = () => {
 
         {selectedOption === "Hijo" && (
           <>
-          <IonItem lines="full" style={{ marginBottom: '15px' }}>
+            <IonItem lines="full" style={{ maxWidth: '500px', margin: '-10px' }}>
             <IonLabel position="stacked" style={{ fontSize: '2em' }}>Edad</IonLabel>
             <IonSelect placeholder="Selecciona tu género" onIonChange={(e) => setSelecteEdad(e.detail.value)} style={{ fontSize: '1.5em' }}>
               <IonSelectOption value="opcion5">10-14</IonSelectOption>
@@ -99,7 +104,7 @@ const Registro: React.FC = () => {
           </IonItem>
           {selectedEdad && (
           <IonNavLink routerDirection="forward" component={() => <ConnectMe />}>
-            <IonButton style={{ padding: '20px', fontSize: '1.5em', fontWeight: 'bold', marginTop: '20px', float: 'right' }}>
+            <IonButton style={{ width: '150px', height: '80px', fontSize: '25px', fontWeight: 'bold', marginTop: '40px', float: 'right' }} >
               Crear cuenta
             </IonButton>
           </IonNavLink>
@@ -113,3 +118,4 @@ const Registro: React.FC = () => {
 };
 
 export default Registro;
+

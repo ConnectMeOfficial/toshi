@@ -12,7 +12,7 @@ function Hemociones() {
           <IonTitle>Emociones</IonTitle>
         </IonToolbar>
       </IonHeader>
-      <IonContent class="ion-padding">
+      <IonContent color="light" className="ion-padding ion-text-center">
         <h1>Emociones</h1>
       </IonContent>
     </>

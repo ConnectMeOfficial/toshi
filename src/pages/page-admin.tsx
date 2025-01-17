@@ -14,7 +14,7 @@ function Admin() {
           <IonTitle>ConnectMe</IonTitle>
         </IonToolbar>
       </IonHeader>
-      <IonContent color="black" className="ion-padding ion-text-center">
+      <IonContent color="light" className="ion-padding ion-text-center">
         <h1>Admin</h1>
         <IonList>
           <IonItem>
